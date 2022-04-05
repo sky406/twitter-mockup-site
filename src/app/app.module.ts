@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { PostsComponent } from './posts/posts.component';
+import { LikeButtComponent } from './like-butt/like-butt.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostsComponent
+    PostsComponent,
+    LikeButtComponent
   ],
   imports: [
     BrowserModule

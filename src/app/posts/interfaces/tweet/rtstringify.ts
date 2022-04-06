@@ -8,11 +8,13 @@ export function generate_tweet(username:string ='tweeter',
                               img2:string = '',
                               img3:string ='',
                               isliked:boolean = false,
-                              retweets:number = 0,
+                              retweets:number = Math.round(Math.random()*200),
                               comments:tweet[] = [],
                               iscomment:boolean = false,
                               isquote:boolean = false,
-                              timeposted:Date = new Date):tweet
+                              timeposted:Date = new Date,
+                              likes:number = Math.round(Math.random()*5000),
+                              mention:string = 'user_name'):tweet
 {
   return{
     postername:username,
@@ -27,8 +29,9 @@ export function generate_tweet(username:string ='tweeter',
     comments:comments,
     iscomment:iscomment,
     isquote:isquote,
-    likes:(Math.round(Math.random()*5000)),
-    timeposted:timeposted
+    likes:likes,
+    timeposted:timeposted,
+    mention:'@'+mention
   }
 }
 
@@ -49,7 +52,7 @@ export function shorten(rt:number):string
       return shortened.toString() + "k"
     }
     else{
-      return shortened.toFixed(1).toString() + 'K';
+      return shortened.toFixed(1) + 'K';
     }
 
   }
@@ -61,7 +64,7 @@ export function shorten(rt:number):string
     }
     else
     {
-    return shortened.toFixed(1).toString() + 'M';
+    return shortened.toFixed(1) + 'M';
     }
   }
   else

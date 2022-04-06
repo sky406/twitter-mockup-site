@@ -16,4 +16,6 @@ export interface tweet
   iscomment:boolean,
   isquote:boolean,
   timeposted:Date,
+  mention:string,
+  
 }

@@ -5,10 +5,7 @@ export interface tweet
   postername:string,
   posterimg:string,
   caption:string,
-  img0:string,
-  img1:string,
-  img2:string,
-  img3:string,
+  images:string[],
   isliked:boolean,
   likes:number,
   retweets:number,
@@ -17,5 +14,5 @@ export interface tweet
   isquote:boolean,
   timeposted:Date,
   mention:string,
-  
+
 }

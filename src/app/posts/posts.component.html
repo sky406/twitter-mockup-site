@@ -1,1 +1,31 @@
-<p>posts works!</p>
+<ul>
+  <li *ngFor="let t of tweets">
+    <div class="tweet container" [id]="tweets.indexOf(t)">
+      <div class="row userinfo">
+        <img [src]="t.posterimg" alt="user" class="userimg" *ngIf="t.posterimg !='';else placeholderuser">
+        <p class="username">{{t.postername}}</p>
+        <p class="mention">{{t.mention}}</p>
+        <p class="timeposted">{{timedif(t)}}</p>
+      </div>
+      <div class="row content">
+        <h1 class="caption">{{t.caption}}</h1>
+        <div class="imgcontainer" *ngIf="t.images !=[]" [ngClass]="{singleimg:t.images.length==1,doubleimg:t.images.length==2,trippleimg:t.images.length==3,quadimg:t.images.length==4}">
+          <img *ngIf="t.images.length > 0" [src]="t.images[0]" alt="img" class="img0">
+          <img *ngIf="t.images.length > 1" [src]="t.images[1]" alt="img" class="img1">
+          <img *ngIf="t.images.length > 2" [src]="t.images[2]" alt="img" class="img2">
+          <img *ngIf="t.images.length > 3" [src]="t.images[3]" alt="img" class="img3" >
+        </div>
+      </div>
+      <div class="row likenshare">
+        <button class="comment"></button><!--TODO make this into a component later -->
+        <rt [retweets]="t.retweets"></rt>
+        <like-butt [totallikes]="t.likes" [isLiked]="t.isliked"></like-butt>
+        <button class="share"></button><!--TODO also make this a component later-->
+      </div>
+    </div>
+  </li>
+</ul>
+
+<ng-template #placeholderuser>
+  <img src="https://www.pngitem.com/pimgs/m/30-307416_profile-icon-png-image-free-download-searchpng-employee.png" alt="user" class="userimg">
+</ng-template>

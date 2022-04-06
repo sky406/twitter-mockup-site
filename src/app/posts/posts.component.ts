@@ -12,9 +12,9 @@ export class PostsComponent implements OnInit {
   tweets:tweet[] = [
     generate_tweet(),
     generate_tweet(),
-    generate_tweet("wicktweets",undefined,'Hello nerds',undefined,undefined,undefined,undefined,true,69,undefined,false,false,new Date(50000),6900),
-    generate_tweet("chad",'https://www.biography.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU0ODc4NDQ5OTM5MzkyMTkz/gettyimages-931925994-square.jpg',"test tweet","https://pyxis.nymag.com/v1/imgs/bc9/0a4/6b4606e999eaa3460cfa3035e33e3dc8db-chadwick-boseman-931925976.rsquare.w700.jpg",
-    undefined,undefined,undefined,true,1290000,undefined,false,false,new Date(1649034105000),2700),
+    generate_tweet("wicktweets",undefined,'Hello nerds',undefined,true,69,undefined,false,false,new Date(50000),6900),
+    generate_tweet("chad",'https://www.biography.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU0ODc4NDQ5OTM5MzkyMTkz/gettyimages-931925994-square.jpg',"test tweet",["https://pyxis.nymag.com/v1/imgs/bc9/0a4/6b4606e999eaa3460cfa3035e33e3dc8db-chadwick-boseman-931925976.rsquare.w700.jpg"],
+    true,1290000,undefined,false,false,new Date(1649034105000),2700),
     generate_tweet()
 
   ]
@@ -87,6 +87,8 @@ export class PostsComponent implements OnInit {
       return `${tweet.timeposted.getDate()}/${tweet.timeposted.getMonth()}/${tweet.timeposted.getFullYear()}`
     }
   }
+
+
 
   ngOnInit(): void {
   }

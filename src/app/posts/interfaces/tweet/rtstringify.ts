@@ -3,10 +3,7 @@ import { tweet } from "./tweet.interface";
 export function generate_tweet(username:string ='tweeter',
                               userimg:string = '',
                               caption:string = 'lorem ipsum',
-                              img0:string = '',
-                              img1:string = '',
-                              img2:string = '',
-                              img3:string ='',
+                              images:string[] = [],
                               isliked:boolean = false,
                               retweets:number = Math.round(Math.random()*200),
                               comments:tweet[] = [],
@@ -16,14 +13,12 @@ export function generate_tweet(username:string ='tweeter',
                               likes:number = Math.round(Math.random()*5000),
                               mention:string = 'user_name'):tweet
 {
+  if(images.length > 4) images = images.slice(3);
   return{
     postername:username,
     posterimg:userimg,
     caption:caption,
-    img0:img0,
-    img1:img1,
-    img2:img2,
-    img3:img3,
+    images:images,
     isliked:isliked,
     retweets:retweets,
     comments:comments,

@@ -36,8 +36,8 @@ export function shorten(rt:number):string
   {
     return num%rounder == 0
   }
-
-  if (rt < 1000) {
+  if(rt==0)return'';
+  else if (rt < 1000) {
     return rt.toString();
   }
   else if (rt >= 1000 && rt<1000000) {

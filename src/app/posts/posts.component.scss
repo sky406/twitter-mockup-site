@@ -1,4 +1,90 @@
+$bordercolor :#2f3336;
+$borderrad:12px;
+@mixin image($width,$angle,$height,$margin) {
+  border-radius: $angle;
+  width: $width;
+  height: $height;
+  margin: $margin;
+
+}
+
+@mixin radius($tl,$tr,$bl,$br) {
+  border-radius: $tl $tr $bl $br;
+}
+
 ul
 {
   list-style: none;
+}
+.placeholderimg
+{
+  background-image: url('https://www.pngitem.com/pimgs/m/30-307416_profile-icon-png-image-free-download-searchpng-employee.png');
+}
+
+.userimg
+{
+  @include image(70px,50%,70px,12px);
+  background-position: center;
+  background-size: cover;
+  margin: 0px;
+
+}
+.username
+{
+  font-size: large;
+  font-weight: bold;
+  margin-right: 2px;
+}
+.mention
+{
+  font-weight: lighter;
+}
+.mention::after
+{
+  content: " · ";
+  font-weight: bolder;
+}
+.con
+{
+  padding-top: 12px;
+}
+
+.tweet{
+  border: solid 2px $bordercolor;
+  padding: 12px;
+  padding-left: 30px;
+}
+
+.imgcontainer
+{
+  height: 400px;
+  width: 100%;
+  display: flex;
+  border-radius: 12px;
+}
+
+.imgcontainer div
+{
+  @include image(100%,$borderrad ,100% ,2px);
+  background-position:center;
+  background-size: cover;
+}
+.doubleimg #img0
+{
+  border-radius: $borderrad 0px 0px $borderrad;
+}
+.doubleimg #img1
+{
+  border-radius: 0px $borderrad $borderrad 0px;
+}
+
+// TODO FIX tripple and quad image
+.tripleimg #divider1
+{
+  display: flex;
+  flex-direction: column;
+}
+.tripleimg #divider1 img
+{
+  height: 5vh;
 }

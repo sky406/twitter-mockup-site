@@ -15,7 +15,9 @@ export class PostsComponent implements OnInit {
     generate_tweet("wicktweets",undefined,'Hello nerds',undefined,true,69,undefined,false,false,new Date(50000),6900),
     generate_tweet("chad",'https://www.biography.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU0ODc4NDQ5OTM5MzkyMTkz/gettyimages-931925994-square.jpg',"test tweet",["https://pyxis.nymag.com/v1/imgs/bc9/0a4/6b4606e999eaa3460cfa3035e33e3dc8db-chadwick-boseman-931925976.rsquare.w700.jpg"],
     true,1290000,undefined,false,false,new Date(1649034105000),2700),
-    generate_tweet()
+    generate_tweet(),
+    generate_tweet("tweetman",undefined,undefined,['https://static.wikia.nocookie.net/terminalmontage/images/1/18/SASBTSSE_Kirbo.png/revision/latest?cb=20210215010740','https://static.wikia.nocookie.net/terminalmontage/images/1/18/SASBTSSE_Kirbo.png/revision/latest?cb=20210215010740','https://static.wikia.nocookie.net/terminalmontage/images/1/18/SASBTSSE_Kirbo.png/revision/latest?cb=20210215010740']),
+    generate_tweet("tweetman",undefined,undefined,['https://static.wikia.nocookie.net/terminalmontage/images/1/18/SASBTSSE_Kirbo.png/revision/latest?cb=20210215010740','https://static.wikia.nocookie.net/terminalmontage/images/1/18/SASBTSSE_Kirbo.png/revision/latest?cb=20210215010740'])
 
   ]
   constructor(){}
@@ -43,6 +45,7 @@ export class PostsComponent implements OnInit {
       else if(sdif > 0) return `${sdif}s`;
       else return 'now';
     }
+    else if(ydif == 0)return `${tweettime.getMonth()} ${tweettime.getDate()}`; //TODO MAKE THE LITTEL MOUSE OVER THING YOU BITCH
     // if (tweet.timeposted.getFullYear() == curtime.getFullYear()
     // && tweet.timeposted.getMonth() == curtime.getMonth()
     // &&curtime.getDate() - tweet.timeposted.getDate() <= limit)

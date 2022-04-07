@@ -1,4 +1,4 @@
-#this is not actually twitter, it's just a mockup site for school
+#this is not actually twitter, it's just a mockup smade to learn how to use angular
 
 
 # Twitter
